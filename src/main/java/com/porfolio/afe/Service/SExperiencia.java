@@ -2,42 +2,46 @@
 package com.porfolio.afe.Service;
 
 import com.porfolio.afe.Entity.Experiencia;
+import com.porfolio.afe.Repository.Rexperiencia;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.porfolio.afe.Repository.Rexperiencia;
+
 
 @Service
 @Transactional
 public class SExperiencia {
     @Autowired
-    Rexperiencia rexplab;
+    Rexperiencia rExperiencia;
     
     public List<Experiencia> list(){
-        return rexplab.findAll();
+        return rExperiencia.findAll();
     }
     
     public Optional<Experiencia> getOne(int id){
-        return rexplab.findById(id);
+        return rExperiencia.findById(id);
     }
+    
     public Optional<Experiencia> getByNombreE(String nombreE){
-        return rexplab.findByNombreE(nombreE);
+        return rExperiencia.findByNombreE(nombreE);
     }
-    public void save(Experiencia exp){
-        rexplab.save(exp);
+    
+    public void save(Experiencia expe){
+        rExperiencia.save(expe);
     }
     
     public void delete(int id){
-        rexplab.deleteById(id);
-    }
-    public boolean existsById(int id){
-        return rexplab.existsById(id);
-    }
-    public boolean existsByNombreE(String nombreE){
-        return rexplab.existsByNombreE(nombreE);
+        rExperiencia.deleteById(id);
     }
     
+    public boolean existsById(int id){
+        return rExperiencia.existsById(id);
+    }
+    
+    public boolean existsByNombreE(String nombreE){
+        return rExperiencia.existsByNombreE(nombreE);
+    }
     
 }
