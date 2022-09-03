@@ -1,4 +1,5 @@
 
+
 package com.porfolio.afe.Interface;
 
 import com.porfolio.afe.Entity.Persona;
@@ -17,4 +18,5 @@ public interface IPersonaService {
     public Persona findPersona(Long id);
     
     
-}
+} 
+
