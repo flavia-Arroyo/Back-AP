@@ -40,6 +40,16 @@ public class Persona {
     @NotNull
     @Size(min=1, max= 50, message="no cumple con la longitud")
     private String img;
+    
+    private String banner;
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
+    }
 
     public Long getId() {
         return id;
